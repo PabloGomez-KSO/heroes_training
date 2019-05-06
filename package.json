@@ -1,0 +1,11 @@
+{
+  "name": "heroes_training",
+  "version": "1.0.0",
+  "description": "Exercise for training purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Juan Pablo Villegas Gómez",
+  "license": "ISC"
+}
