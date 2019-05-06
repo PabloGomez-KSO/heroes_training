@@ -9,8 +9,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, "../dist/"),
-        filename: "[name].bundle.js",
-        chunkFilename: "[name]-chunk.js",
+        filename: "[name].bundle.js"
     },
 
     resolve: {
@@ -26,11 +25,8 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'] },
-            { test: /\.(ts|js)$/, loaders: ['angular-router-loader'] }, 
-            { test: /.html$/, use: 'raw-loader' },
-            { test: /\.(s*)css$/, use: ['to-string-loader','style-loader','css-loader','sass-loader'] },
-            { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader' },
+            { test: /.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'] },
+            { test: /.html$/, use: 'raw-loader' }
         ]
     },
 
