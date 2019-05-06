@@ -4,7 +4,8 @@
   "description": "Exercise for training purposes",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "test",
+    "build": "webpack-dev-server --config webpack/webpack.config.js"
   },
   "author": "Juan Pablo Villegas Gómez",
   "license": "ISC",
