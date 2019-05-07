@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    ohShit(){
-
+    test() {
         console.log("it works");
     }
 }
