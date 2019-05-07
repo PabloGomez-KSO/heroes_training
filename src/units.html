@@ -13,21 +13,34 @@
         <td colspan="3" title="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36">Browser: Chrome 74.0.3729 (Windows 10.0.0)</td>
       </tr>
       <tr class="overview">
-        <td colspan="3">Timestamp: 2019-5-7 16:09:43</td>
+        <td colspan="3">Timestamp: 2019-5-7 16:39:41</td>
       </tr>
       <tr>
         <td colspan="3">
-          1 tests / 
+          2 tests / 
           0 errors / 
-          0 failures / 
+          1 failures / 
           0 skipped / 
-          runtime: 0.001s
+          runtime: 0.005s
         </td>
       </tr>
       <tr class="header">
         <td>Status</td>
         <td>Spec</td>
         <td>Suite / Results</td>
+      </tr>
+      <tr class="fail">
+        <td>Failed</td>
+        <td>should return 2</td>
+        <td>
+          First Unit test
+          <br />Error: Expected 5 to be 2.
+    at &lt;Jasmine&gt;
+    at UserContext.&lt;anonymous&gt; (webpack:///src/components/app/app.component.spec.ts:8:16 &lt;- src/unit-tests.bundle.js:1516:1825)
+    at e.invoke (webpack:///node_modules/zone.js/dist/zone.js:391 &lt;- src/unit-tests.bundle.js:797:7006)
+    at e.onInvoke (webpack:///node_modules/zone.js/dist/proxy.js:129 &lt;- src/unit-tests.bundle.js:1456:2285)
+
+        </td>
       </tr>
       <tr class="pass">
         <td>Passed in 0.001s</td>

@@ -28,8 +28,6 @@ module.exports = function(config) {
     // list of files / patterns to exclude
     exclude: [
     ],
-
-
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
@@ -83,13 +81,14 @@ module.exports = function(config) {
     webpack: webpackConfig,
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
 
-    plugins : ['karma-jasmine', 'karma-phantomjs-launcher', 'karma-webpack', 'karma-sourcemap-loader', 'karma-chrome-launcher', 'karma-htmlfile-reporter', 'karma-firefox-launcher'],
+    plugins : ['karma-jasmine', 'karma-webpack', 'karma-sourcemap-loader', 'karma-chrome-launcher', 'karma-htmlfile-reporter', 'karma-firefox-launcher'],
+
 
 
   })
