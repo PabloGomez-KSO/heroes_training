@@ -35,14 +35,4 @@ export class HeroesComponent implements OnInit {
     this.store.dispatch(new actions.LoadHeroes());
 
   }
-
- /**
- * Get heroes calling getHeroesService
- * @param result - Update state of Heroes.
- */
-
-  getHeroes() {
-    this.heroService.getHeroes().subscribe(heroes => console.log(heroes));
-  }
-
 }
