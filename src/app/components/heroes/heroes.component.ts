@@ -28,9 +28,12 @@ export class HeroesComponent implements OnInit {
              this.loading = data.loading;
              this.error = data.error;
 
+             console.log(this.heroes);
+
         });
 
     this.store.dispatch(new actions.LoadHeroes());
+
   }
 
  /**
