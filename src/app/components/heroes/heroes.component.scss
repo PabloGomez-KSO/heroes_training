@@ -8,8 +8,19 @@
   height: 600px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 
-.heroes-box img {
+.hero-card  img {
   border-radius: 50%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.hero-card {
+  width: 230px;
+  height: 230px;
+  background: white;
+
 }

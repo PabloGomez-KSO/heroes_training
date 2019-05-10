@@ -19,7 +19,7 @@ export class HeroesComponent implements OnInit {
   loading: boolean;
   error: any;
 
-  constructor(private heroService: HeroService, private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
     this.store.select('heroes').
