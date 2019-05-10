@@ -21,7 +21,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 
 
 //Enviroment
-import { environment } from './enviroments/enviroment';
+import { environment } from '../enviroments/enviroment';
 
 @NgModule({
   declarations: [

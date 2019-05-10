@@ -1,6 +1,10 @@
-<div *ngFor="let heroe of heroes">
 
-  <p> {{ heroe._name }} </p>
+<div class="heroes-box">
+  <div *ngFor="let heroe of heroes">
+    <div class="hero-card">
+        <img [src]="heroe._picture" alt="Avatar" >
+        <span> {{ heroe._name }} </span>
 
-
+    </div>
+  </div>
 </div>

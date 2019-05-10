@@ -10,7 +10,7 @@ import { Hero } from '../model/hero.model';
 export class HeroService {
 
 
-  private apiUrl = 'https://udem.herokuapp.com/heroes';
+  private apiUrl = 'https://udem.herokuapp.com/heroes/';
 
 
   constructor(private http: HttpClient) {
