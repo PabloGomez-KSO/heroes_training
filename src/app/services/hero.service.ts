@@ -21,10 +21,7 @@ export class HeroService {
   * @param result - An observable with an array of heroes.
   */
   getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.apiUrl)
-      .pipe(
-        catchError(this.handleError<Hero[]>('getHeroes', []))
-      );
+    return this.http.get<Hero[]>(this.apiUrl);
   }
 
   /**

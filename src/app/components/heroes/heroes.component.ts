@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../../services/hero.service';
+import { Store } from '@ngrx/store';
+import { AppState } from  '../../store/app.reducers';
+import { Hero } from '../../model/hero.model';
+
+import * as actions from '../../store/actions';
 
 @Component({
   selector: 'app-heroes',
@@ -9,10 +14,23 @@ import { HeroService } from '../../services/hero.service';
 
 export class HeroesComponent implements OnInit {
 
-  constructor(private heroService: HeroService) { }
+
+  heroes: Hero[] = [];
+  loading: boolean;
+  error: any;
+
+  constructor(private heroService: HeroService, private store: Store<AppState>) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.store.select('heroes').
+        subscribe(data => {
+             this.heroes = data.heroes;
+             this.loading = data.loading;
+             this.error = data.error;
+
+        });
+
+    this.store.dispatch(new actions.LoadHeroes());
   }
 
  /**
