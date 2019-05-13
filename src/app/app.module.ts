@@ -17,16 +17,18 @@ import { HeroService } from './services/hero.service';
 
 //Components
 import { HeroesComponent } from './components/heroes/heroes.component';
-
+import { HeroeDetailComponent } from './components/hero-detail/hero-detail.component';
 
 //Enviroment
 import { environment } from '../enviroments/enviroment';
 
-
+//Routes
+import { APP_ROUTES } from './app.routes';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroeDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { environment } from '../enviroments/enviroment';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production // Restrict extension to log-only mode
     }),
-    EffectsModule.forRoot( effectsArr )
+    EffectsModule.forRoot( effectsArr ),
+    APP_ROUTES
   ],
   providers: [
     HeroService

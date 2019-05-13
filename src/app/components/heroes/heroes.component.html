@@ -1,5 +1,5 @@
 <ul class="heroes-container">
-  <li class="hero-card" *ngFor="let heroe of heroes">
+  <li class="hero-card" *ngFor="let heroe of heroes; let i = index">
     <div class="img">
       <img [src]="heroe._picture" alt="Avatar">
     </div>
@@ -8,12 +8,15 @@
         <p> 1st </p>
       </span>
     </div>
+
+
     <div class="content">
       <div class="content_nickname">
         <span> <strong> {{ heroe._nickname }} </strong> </span>
       </div>
       <div class="content_name">
         <span> {{ heroe._name}} </span>
+        {{i}}
       </div>
       <div class="content_height">
         <span> Estatura: {{ heroe._height }} </span>

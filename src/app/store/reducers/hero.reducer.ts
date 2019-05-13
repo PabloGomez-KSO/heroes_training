@@ -31,8 +31,12 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
            error: null
          };
     case actions.LOAD_HEROES_SUCCESS:
-           
-         
+        /* for (let i = 1; i <= action.heroes.length; i++) {
+           action.heroes[i]._id = i;
+         }*/
+
+         console.log(action.heroes);
+
          return {
            ...state,
            loading: false,
