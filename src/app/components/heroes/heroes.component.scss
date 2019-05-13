@@ -1,6 +1,5 @@
 .heroes-container {
   background: rgba(255, 255, 255, 0.8);
-  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -11,23 +10,61 @@
   list-style: none;
   min-height: 70%;
   min-width: 70%;
-  
+  position: absolute;
+
   .hero-card {
-    width: 250.4px;
-    height: 140px;
+    width: 350px;
+    height: 190px;
     background: white;
     margin: auto;
     border-radius: 10%;
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
+
     img {
       border-radius: 50%;
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       float: left;
       margin-left: 10px;
-      margin-top: 10px;
+      margin-top: 20px;
+    }
+
+    .dot {
+      height: 25px;
+      width: 25px;
+      background-color: rgba(255, 0, 0, 0.8);
+      border-radius: 50%;
+      display: inline-block;
+      top: 0; /*[wherever you want it]*/
+      left: -30px;
+      position: relative;
+      top: 15px;
+      right: 0;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+
+      p {
+        font-family: 'Helvetica';
+        color: white;
+        font-size: 22px;
+      }
+
+    }
+
+    .content {
+      position: relative;
+      right: 10px;
+      left: 40px;
+      font-family: 'Helvetica';
+      color: #696969;
+
+      .content_nickname{
+        color: red;
+        font-size: 22px;
+      }
     }
   }
 }

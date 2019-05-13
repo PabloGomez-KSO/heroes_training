@@ -6,7 +6,6 @@ import { of } from 'rxjs/observable/of';
 import { Hero } from '../model/hero.model';
 
 @Injectable()
-
 export class HeroService {
 
 

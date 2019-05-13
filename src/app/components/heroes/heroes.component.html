@@ -3,14 +3,19 @@
     <div class="img">
       <img [src]="heroe._picture" alt="Avatar">
     </div>
+    <div class="circle">
+      <span class="dot">
+        <p> 1st </p>
+      </span>
+    </div>
     <div class="content">
-      <div class="row">
-        <span> {{ heroe._nickname }} </span>
+      <div class="content_nickname">
+        <span> <strong> {{ heroe._nickname }} </strong> </span>
       </div>
-      <div class="row">
+      <div class="content_name">
         <span> {{ heroe._name}} </span>
       </div>
-      <div class="row">
+      <div class="content_height">
         <span> Estatura: {{ heroe._height }} </span>
       </div>
     </div>
