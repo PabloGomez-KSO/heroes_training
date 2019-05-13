@@ -1,26 +1,33 @@
-.heroes-box {
+.heroes-container {
   background: rgba(255, 255, 255, 0.8);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1000px;
-  height: 600px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-
-}
-
-.hero-card  img {
-  border-radius: 50%;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.hero-card {
-  width: 230px;
-  height: 230px;
-  background: white;
-
+  padding: 0;
+  align-items: center; //De acuerdo al flex centra los items
+  list-style: none;
+  min-height: 70%;
+  min-width: 70%;
+  
+  .hero-card {
+    width: 250.4px;
+    height: 140px;
+    background: white;
+    margin: auto;
+    border-radius: 10%;
+    vertical-align: middle;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    img {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      float: left;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+  }
 }

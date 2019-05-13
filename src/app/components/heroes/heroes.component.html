@@ -1,15 +1,18 @@
-
-<div class="heroes-box">
-  <div *ngFor="let heroe of heroes">
-    <div class="hero-card">
-      <div class="img">
-        <img [src]="heroe._picture" alt="Avatar" >
-      </div>
-      <div class="content">
+<ul class="heroes-container">
+  <li class="hero-card" *ngFor="let heroe of heroes">
+    <div class="img">
+      <img [src]="heroe._picture" alt="Avatar">
+    </div>
+    <div class="content">
+      <div class="row">
         <span> {{ heroe._nickname }} </span>
-        <span> {{ heroe._height }} </span>
-        <span> Estatura : {{ heroe._height }} </span>
+      </div>
+      <div class="row">
+        <span> {{ heroe._name}} </span>
+      </div>
+      <div class="row">
+        <span> Estatura: {{ heroe._height }} </span>
       </div>
     </div>
-  </div>
-</div>
+  </li>
+</ul>

@@ -12,7 +12,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { effectsArr } from './store/effects';
 
-
 //Services
 import { HeroService } from './services/hero.service';
 
@@ -22,6 +21,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 
 //Enviroment
 import { environment } from '../enviroments/enviroment';
+
 
 @NgModule({
   declarations: [

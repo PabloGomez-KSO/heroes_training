@@ -31,6 +31,8 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
            error: null
          };
     case actions.LOAD_HEROES_SUCCESS:
+           
+         
          return {
            ...state,
            loading: false,
