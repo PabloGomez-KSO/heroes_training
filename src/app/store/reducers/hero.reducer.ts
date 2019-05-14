@@ -3,23 +3,18 @@ import { Hero } from '../../model/hero.model';
 
 
 export interface HeroesState {
-
   heroes: Hero[];
   loaded: boolean;
   loading: boolean;
   error: any;
-
 }
 
 const heroesInitialState: HeroesState = {
-
   heroes: [],
   loaded: false,
   loading: false,
   error: null
-
 }
-
 
 export function heroesReducer(state = heroesInitialState, action: actions.heroActions): HeroesState {
 
@@ -31,11 +26,6 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
            error: null
          };
     case actions.LOAD_HEROES_SUCCESS:
-        /* for (let i = 1; i <= action.heroes.length; i++) {
-           action.heroes[i]._id = i;
-         }*/
-
-         console.log(action.heroes);
 
          return {
            ...state,

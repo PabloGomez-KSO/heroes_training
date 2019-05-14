@@ -21,7 +21,6 @@
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
-
     img {
       border-radius: 50%;
       width: 140px;
@@ -51,7 +50,6 @@
         color: white;
         font-size: 22px;
       }
-
     }
 
     .content {
@@ -61,10 +59,33 @@
       font-family: 'Helvetica';
       color: #696969;
 
-      .content_nickname{
+      .content_nickname {
         color: red;
         font-size: 22px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1560px) {
+  .heroes-container {
+    min-height: 80%;
+    min-width: 80%;
+  }
+}
+
+
+@media screen and (max-width: 1360px) {
+  .heroes-container {
+    min-height: 90%;
+    min-width: 90%;
+  }
+}
+
+
+@media screen and (max-width: 1100px) {
+  .heroes-container {
+    height: 60%;
+    width: 90%;
   }
 }

@@ -23,7 +23,7 @@ import { HeroeDetailComponent } from './components/hero-detail/hero-detail.compo
 import { environment } from '../enviroments/enviroment';
 
 //Routes
-import { APP_ROUTES } from './app.routes';
+import { APP_ROUTES } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
