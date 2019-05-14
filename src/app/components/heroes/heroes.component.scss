@@ -1,16 +1,15 @@
 .heroes-container {
   background: rgba(255, 255, 255, 0.8);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: inline-block;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   align-items: center; //De acuerdo al flex centra los items
   list-style: none;
   min-height: 70%;
-  min-width: 70%;
-  position: absolute;
+  width: 70%;
+  margin-top: 160px;
 
   .hero-card {
     width: 350px;
@@ -31,8 +30,6 @@
     }
 
     .dot {
-      height: 25px;
-      width: 25px;
       background-color: rgba(255, 0, 0, 0.8);
       border-radius: 50%;
       display: inline-block;
@@ -51,7 +48,6 @@
         font-size: 22px;
       }
     }
-
     .content {
       position: relative;
       right: 10px;
@@ -67,25 +63,39 @@
   }
 }
 
-@media screen and (max-width: 1560px) {
+@media screen and (max-width: 414px) {
   .heroes-container {
-    min-height: 80%;
-    min-width: 80%;
-  }
-}
+    min-width:280px;
+    .hero-card {
+      width: 205px;
+      height: 152px;
+      min-width:280px;
+      min-height: 152px;
 
-
-@media screen and (max-width: 1360px) {
-  .heroes-container {
-    min-height: 90%;
-    min-width: 90%;
-  }
-}
-
-
-@media screen and (max-width: 1100px) {
-  .heroes-container {
-    height: 60%;
-    width: 90%;
+      img {
+        width: 120px;
+        height: 120px;
+      }
+      .dot {
+        width: 45px;
+        height: 45px;
+        min-width:45px;
+        min-height: 45px;
+        p {
+          color: white;
+          font-size: 16px;
+        }
+      }
+      .content {
+        color: #696969;
+        font-size: 14px;
+        right: 5px;
+        left: 15px;
+        word-wrap: break-word;
+        .content_nickname {
+          color: red;
+        }
+      }
+    }
   }
 }
