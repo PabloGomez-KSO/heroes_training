@@ -1,0 +1,20 @@
+.hero-edit-container {
+  background: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  padding: 0;
+  align-items: center; //De acuerdo al flex centra los items
+  min-height: 70%;
+  width: 70%;
+  margin-top: 160px;
+
+  .form-row {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+  }
+
+  .form-row > input {
+    width: 200px;
+    height: 25px;
+  }
+}

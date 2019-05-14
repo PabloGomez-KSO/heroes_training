@@ -1,12 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { HeroeDetailComponent } from '../app/components/hero-detail/hero-detail.component';
-import { HeroesComponent } from '../app/components/heroes/heroes.component';
+import { HeroEditComponent } from './components/hero-edit/hero-edit.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
 
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent },
-  { path: 'hero', component:  HeroeDetailComponent },
+  { path: 'heroEdit/:id', component:  HeroEditComponent },
   { path: '**', pathMatch: 'full',redirectTo: 'heroes'  }
 ];
 

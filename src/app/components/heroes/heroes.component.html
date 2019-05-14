@@ -1,11 +1,11 @@
 <div class="heroes-container">
-  <li class="hero-card" *ngFor="let heroe of heroes; let i = index">
+  <li class="hero-card" *ngFor="let heroe of heroes; let i = index" (click)="modifyHero(heroe._id)">
     <div class="img">
       <img [src]="heroe._picture" alt="Avatar">
     </div>
     <div class="circle">
       <span class="dot">
-        <p> 1st </p>
+        <p> {{ heroe.getIdString() }} </p>
       </span>
     </div>
 
@@ -16,7 +16,6 @@
       </div>
       <div class="content_name">
         <span> {{ heroe._name}} </span>
-        {{i}}
       </div>
       <div class="content_height">
         <span> Estatura: {{ heroe._height }} </span>

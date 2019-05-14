@@ -18,29 +18,40 @@ const heroesInitialState: HeroesState = {
 
 export function heroesReducer(state = heroesInitialState, action: actions.heroActions): HeroesState {
 
-  switch( action.type){
+  switch (action.type) {
     case actions.LOAD_HEROES:
-         return {
-           ...state,
-           loading: true,
-           error: null
-         };
+      return {
+        ...state,
+        loading: true,
+        error: null
+      };
     case actions.LOAD_HEROES_SUCCESS:
 
-         return {
-           ...state,
-           loading: false,
-           loaded: true,
-           heroes: [...action.heroes ]
-         };
+      let heroesArray: Hero[] = [];
+
+      for (let i = 0; i < action.heroes.length; i++) {
+        heroesArray[i] = new Hero(i + 1,
+          action.heroes[i]._name,
+          action.heroes[i]._height,
+          action.heroes[i]._picture,
+          action.heroes[i]._nickname
+        );
+      }
+
+      return {
+        ...state,
+        loading: false,
+        loaded: true,
+        heroes: [...heroesArray]
+      };
     case actions.LOAD_HEROES_FAIL:
-        return {
-          ...state,
-          loading: false,
-          loaded: false,
-          error: action.payload
-        };
+      return {
+        ...state,
+        loading: false,
+        loaded: false,
+        error: action.payload
+      };
     default:
-         return state;
+      return state;
   }
 }

@@ -17,7 +17,7 @@ import { HeroService } from './services/hero.service';
 
 //Components
 import { HeroesComponent } from './components/heroes/heroes.component';
-import { HeroeDetailComponent } from './components/hero-detail/hero-detail.component';
+import { HeroEditComponent } from './components/hero-edit/hero-edit.component';
 
 //Enviroment
 import { environment } from '../enviroments/enviroment';
@@ -28,7 +28,7 @@ import { APP_ROUTES } from './app-routing.module';
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroeDetailComponent
+    HeroEditComponent
   ],
   imports: [
     BrowserModule,

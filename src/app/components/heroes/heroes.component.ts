@@ -4,6 +4,7 @@ import { AppState } from  '../../store/app.reducers';
 import { Hero } from '../../model/hero.model';
 
 import * as actions from '../../store/actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-heroes',
@@ -18,7 +19,7 @@ export class HeroesComponent implements OnInit {
   loading: boolean;
   error: any;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>, private router: Router) { }
 
   ngOnInit() {
     this.store.select('heroes').
@@ -28,10 +29,13 @@ export class HeroesComponent implements OnInit {
              this.error = data.error;
 
              console.log(this.heroes);
-
         });
 
     this.store.dispatch(new actions.LoadHeroes());
 
+  }
+
+  modifyHero(id: number){
+    this.router.navigate(['/heroEdit',id]);
   }
 }

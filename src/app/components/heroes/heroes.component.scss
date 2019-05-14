@@ -20,6 +20,11 @@
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
+
+    &:hover {
+      background: yellow;
+    }
+
     img {
       border-radius: 50%;
       width: 140px;
@@ -27,6 +32,15 @@
       float: left;
       margin-left: 10px;
       margin-top: 20px;
+
+      &:hover {
+        @extend .zoom-background-hover;
+      }
+
+      &:active {
+        @extend .zoom-background-hover;
+      }
+
     }
 
     .dot {
@@ -45,7 +59,7 @@
       p {
         font-family: 'Helvetica';
         color: white;
-        font-size: 22px;
+        font-size: 18px;
       }
     }
     .content {
@@ -65,11 +79,11 @@
 
 @media screen and (max-width: 414px) {
   .heroes-container {
-    min-width:280px;
+    min-width: 280px;
     .hero-card {
       width: 205px;
       height: 152px;
-      min-width:280px;
+      min-width: 280px;
       min-height: 152px;
 
       img {
@@ -79,12 +93,13 @@
       .dot {
         width: 45px;
         height: 45px;
-        min-width:45px;
+        min-width: 45px;
         min-height: 45px;
         p {
           color: white;
           font-size: 16px;
         }
+
       }
       .content {
         color: #696969;
@@ -98,4 +113,8 @@
       }
     }
   }
+}
+.zoom-background-hover {
+  transform: scale(1.7);
+  transition-duration: 1s;
 }
