@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/app.reducers';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { Hero } from '../../model/hero.model';
 import { Location } from '@angular/common';
+import { ActivatedRoute } from "@angular/router";
+
 @Component({
   selector: 'heroe-edit',
   templateUrl: 'hero-edit.component.html',
@@ -12,18 +13,27 @@ import { Location } from '@angular/common';
 
 export class HeroEditComponent implements OnInit {
 
-  constructor(private store: Store<AppState>, private activatedRoute: ActivatedRoute, private location: Location) {
-      this.activatedRoute.params.subscribe(params => {
-        console.log(params);
-      });
+  heroes: Hero[] = [];
+  heroToEdit: Hero;
+
+  constructor(private location: Location, private store: Store<AppState>, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.store.select('heroesState').
+      subscribe(data => {
+        this.heroes = data.heroes;
+        this.activatedRoute.params.subscribe(params => {
+          let idToSearch = params['id'];
+          console.log(this.heroes);
+          console.log(idToSearch);
+          this.heroToEdit = this.heroes.find(hero => hero._id === idToSearch);
+          console.log(this.heroToEdit);
+        });
+      });
   }
 
-  goToPreviousPage(){
-    console.log("entramos aca");
+  goToPreviousPage() {
     this.location.back();
-
   }
 }

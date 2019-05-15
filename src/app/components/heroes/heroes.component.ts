@@ -14,15 +14,15 @@ import { Router } from '@angular/router';
 
 export class HeroesComponent implements OnInit {
 
-
   heroes: Hero[] = [];
   loading: boolean;
   error: any;
+  heroSelected: Hero;
 
   constructor(private store: Store<AppState>, private router: Router) { }
 
   ngOnInit() {
-    this.store.select('heroes').
+    this.store.select('heroesState').
         subscribe(data => {
              this.heroes = data.heroes;
              this.loading = data.loading;

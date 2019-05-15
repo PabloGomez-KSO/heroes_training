@@ -21,7 +21,6 @@ export class LoadHeroesSuccess implements Action {
 
 }
 
-
 export class LoadHeroesFail implements Action {
 
   readonly type = LOAD_HEROES_FAIL;

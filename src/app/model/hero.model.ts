@@ -32,6 +32,5 @@ export class Hero {
     else{
       return this._id+"th";
     }
-
   }
 }
