@@ -8,8 +8,6 @@
         <p> {{ heroe.getIdString() }} </p>
       </span>
     </div>
-
-
     <div class="content">
       <div class="content_nickname">
         <span> <strong> {{ heroe._nickname }} </strong> </span>
@@ -18,7 +16,7 @@
         <span> {{ heroe._name}} </span>
       </div>
       <div class="content_height">
-        <span> Estatura: {{ heroe._height }} </span>
+        <span> Estatura: {{ heroe.convertHeightToMeters(heroe._height) }} mt </span>
       </div>
     </div>
   </li>

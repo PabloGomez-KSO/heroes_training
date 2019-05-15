@@ -7,7 +7,7 @@
   padding: 0;
   align-items: center; //De acuerdo al flex centra los items
   list-style: none;
-  min-height: 70%;
+  min-height: 60%;
   width: 70%;
   margin-top: 160px;
 
@@ -16,13 +16,14 @@
     height: 190px;
     background: white;
     margin: auto;
-    border-radius: 10%;
+    border-radius: 25px;
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
 
     &:hover {
-      background: yellow;
+      background: #f2dfd7;
+      @extend .zoom-background-hover;
     }
 
     img {
@@ -56,6 +57,10 @@
       height: 60px;
       text-align: center;
 
+      &:hover {
+        @extend .zoom-background-hover;
+      }
+
       p {
         font-family: 'Helvetica';
         color: white;
@@ -68,6 +73,10 @@
       left: 40px;
       font-family: 'Helvetica';
       color: #696969;
+
+      &:hover {
+        @extend .zoom-background-hover;
+      }
 
       .content_nickname {
         color: red;
@@ -115,6 +124,6 @@
   }
 }
 .zoom-background-hover {
-  transform: scale(1.7);
-  transition-duration: 1s;
+  transform: scale(1.05);
+  transition-duration: 0.2s;
 }

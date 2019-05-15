@@ -32,7 +32,6 @@ export class HeroesComponent implements OnInit {
         });
 
     this.store.dispatch(new actions.LoadHeroes());
-
   }
 
   modifyHero(id: number){

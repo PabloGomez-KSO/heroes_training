@@ -1,21 +1,29 @@
 <div class="hero-edit-container">
   <form>
-    <ul class="hero_edit_data">
+    <ul class="hero-edit-data">
       <li class="form-row">
-        <label for="name">Name</label>
-        <input type="text" id="name">
+        <label for="nickname"> <strong> Nickname </strong> </label>
+        <input type="text" id="nickname" placeholder="Enter a hero nickname">
       </li>
       <li class="form-row">
-        <label for="height">Height </label>
-        <input type="text" id="height">
+        <label for="name"> <strong> Name </strong></label>
+        <input type="text" id="name" placeholder="Enter a hero name">
       </li>
       <li class="form-row">
-        <label for="nickname">Nickname</label>
-        <input type="text" id="nickname">
+        <label for="height"> <strong> Height </strong></label>
+        <input type="text" id="height" placeholder="Enter a height in meters">
       </li>
-      <li class="form-row">
-        <button type="submit">Submit</button>
-      </li>
+      <div class="hero-image">
+        <img src="http://i.annihil.us/u/prod/marvel/i/mg/6/a0/55b6a25e654e6/standard_xlarge.jpg" alt="Avatar">
+      </div>
+      <div class="option-buttons">
+        <button (click)="goToPreviousPage()" type="submit">Previous</button>
+        <button type="submit">Update</button>
+      </div>
     </ul>
+
   </form>
+
+
+
 </div>

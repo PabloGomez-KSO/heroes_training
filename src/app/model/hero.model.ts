@@ -2,7 +2,7 @@ export class Hero {
 
   _id: number;
   _name: string;
-  _height:  string;
+  _height:  number;
   _picture: string;
   _nickname: string;
 
@@ -11,13 +11,12 @@ export class Hero {
      this._name = name;
      this._picture = picture;
      this._nickname = nickname;
-     this._height = this.convertHeightToMeters(height);
-
+     this._height = height;
   }
 
   convertHeightToMeters(height: number): string{
     let heightInMeters = height*0.3048;
-    return heightInMeters.toFixed(2)+"mt";
+    return heightInMeters.toFixed(2);
   }
 
   public getIdString(){
