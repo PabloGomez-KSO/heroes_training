@@ -20,6 +20,7 @@
     vertical-align: middle;
     margin-top: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 
     &:hover {
       background: #f2dfd7;
@@ -41,7 +42,6 @@
       &:active {
         @extend .zoom-background-hover;
       }
-
     }
 
     .dot {

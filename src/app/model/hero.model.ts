@@ -13,24 +13,4 @@ export class Hero {
      this._nickname = nickname;
      this._height = height;
   }
-
-  convertHeightToMeters(height: number): string{
-    let heightInMeters = height*0.3048;
-    return heightInMeters.toFixed(2);
-  }
-
-  public getIdString(){
-    if( this._id === 1){
-      return this._id+"st";
-    }
-    else if(this._id  === 2){
-      return this._id+"nd";
-    }
-    else if(this._id === 3){
-      return this._id+"rd";
-    }
-    else{
-      return this._id+"th";
-    }
-  }
 }

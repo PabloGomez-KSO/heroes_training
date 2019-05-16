@@ -24,11 +24,18 @@ import { environment } from '../enviroments/enviroment';
 
 //Routes
 import { APP_ROUTES } from './app-routing.module';
+
+//Pipes.
+import { HeightConversionPipe} from './pipes/heightConversionPipe';
+import { idConversionPipe } from './pipes/idConversionPipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroEditComponent
+    HeroEditComponent,
+    HeightConversionPipe,
+    idConversionPipe
   ],
   imports: [
     BrowserModule,

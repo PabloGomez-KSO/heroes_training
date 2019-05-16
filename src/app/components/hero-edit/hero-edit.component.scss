@@ -6,22 +6,12 @@
   min-height: 70%;
   width: 670px;
   margin-top: 160px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  justify-content: left;
-  color: #282828;
+
   .form-row {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 0.5em;
     font-family: 'Helvetica';
     font-size: 18px;
@@ -29,14 +19,12 @@
   }
   .form-row > label {
     padding: 10px 5px 5px 10px;
-    flex: 1;
+    display: none;
     margin-top: 20px;
     margin-right: 15px;
     width: 150px;
-    min-width: 50px;
   }
   .form-row > input {
-    flex: 2;
     margin-top: 15px;
     width: 320px;
     font-family: 'Helvetica';
@@ -73,5 +61,25 @@
     background-color: rgba(255, 0, 0, 0.8);
     padding: 15px;
     width: 100px;
+  }
+}
+
+@media all and (min-width: 500px) {
+  .hero-edit-container {
+    .form-row > label {
+      display: block;
+    }
+  }
+}
+@media all and (min-width: 600px) {
+  .hero-edit-container {
+    .form-row {
+      flex-direction: row;
+    }
+    .form-row label {
+      flex-basis: 9rem;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
   }
 }

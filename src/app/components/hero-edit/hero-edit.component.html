@@ -1,29 +1,37 @@
 <div class="hero-edit-container">
   <form>
-    <ul class="hero-edit-data">
-      <li class="form-row">
+    <div class="hero-edit-data">
+      <div class="form-row">
         <label for="nickname"> <strong> Nickname </strong> </label>
-        <input type="text" id="nickname" placeholder="Enter a hero nickname">
-      </li>
-      <li class="form-row">
+        <input type="text"
+          name="nickname"
+          [(ngModel)]="heroToEdit._nickname"
+          id="nickname"
+          placeholder="Enter a hero nickname">
+      </div>
+      <div class="form-row">
         <label for="name"> <strong> Name </strong></label>
-        <input type="text" id="name" placeholder="Enter a hero name">
-      </li>
-      <li class="form-row">
-        <label for="height"> <strong> Height </strong></label>
-        <input type="text" id="height" placeholder="Enter a height in meters">
-      </li>
+        <input type="text"
+          id="name"
+          name="name"
+          [(ngModel)]="heroToEdit._name"
+          placeholder="Enter a hero name">
+      </div>
+      <div class="form-row">
+        <label for="height"> <strong> Height (ft) </strong></label>
+        <input type="text"
+          id="height"
+          name="height"
+          [(ngModel)]="heroToEdit._height"
+          placeholder="Enter a height in feet">
+      </div>
       <div class="hero-image">
-        <img src="http://i.annihil.us/u/prod/marvel/i/mg/6/a0/55b6a25e654e6/standard_xlarge.jpg" alt="Avatar">
+        <img [src]="heroToEdit._picture" alt="Avatar">
       </div>
       <div class="option-buttons">
         <button (click)="goToPreviousPage()" type="submit">Previous</button>
-        <button type="submit">Update</button>
+        <button (click)="updateHero()" type="submit">Update</button>
       </div>
-    </ul>
-
+    </div>
   </form>
-
-
-
 </div>

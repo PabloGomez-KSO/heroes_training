@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from  '../../store/app.reducers';
+import { AppState } from '../../store/app.reducers';
 import { Hero } from '../../model/hero.model';
 
 import * as actions from '../../store/actions';
@@ -16,6 +16,7 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [];
   loading: boolean;
+  loaded: boolean;
   error: any;
   heroSelected: Hero;
 
@@ -23,18 +24,21 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     this.store.select('heroesState').
-        subscribe(data => {
-             this.heroes = data.heroes;
-             this.loading = data.loading;
-             this.error = data.error;
+      subscribe(data => {
+        this.heroes = data.heroes;
+        this.loading = data.loading;
+        this.error = data.error;
+        this.loaded = data.loaded;
+      }
+      );
 
-             console.log(this.heroes);
-        });
+    if (!this.loaded) {
+      this.store.dispatch(new actions.LoadHeroes());
+    }
 
-    this.store.dispatch(new actions.LoadHeroes());
   }
 
-  modifyHero(id: number){
-    this.router.navigate(['/heroEdit',id]);
+  modifyHero(id: number) {
+    this.router.navigate(['/heroEdit', id]);
   }
 }
