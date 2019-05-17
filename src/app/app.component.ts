@@ -7,7 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-    test() {
-        console.log("it works");
-    }
 }

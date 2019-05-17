@@ -4,10 +4,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'idPipe'
 })
 
-export class idConversionPipe implements PipeTransform {
+export class IdConversionPipe implements PipeTransform {
 
   transform(value: number): string {
-    console.log("el valor es" + value);
     if (value === 1) {
       return value + "st";
     }

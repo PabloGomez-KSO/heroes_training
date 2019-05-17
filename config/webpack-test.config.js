@@ -22,7 +22,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'] },
-            { test: /.html$/, use: 'raw-loader' }
+            { test: /.html$/, use: 'raw-loader' },
+            { test: /\.(s*)css$/, use: ['to-string-loader','style-loader','css-loader','sass-loader'] }
         ]
     },
     plugins: [

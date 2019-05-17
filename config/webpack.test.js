@@ -16,13 +16,13 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: { configFileName: helpers.root('tsconfig.json') }
-          } , 'angular2-template-loader'
+          },
+          'angular2-template-loader'
         ]
       },
       {
         test: /\.html$/,
         loader: 'html-loader'
-
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -30,13 +30,12 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: helpers.root('src', 'components','app'),
+        exclude: helpers.root('src', 'components', 'app'),
         loader: 'null-loader'
       },
       {
-        test: /\.css$/,
-        include: helpers.root('src', 'components','app'),
-        loader: 'raw-loader'
+        test: /\.(s*)css$/,
+        use: ['to-string-loader', 'style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
@@ -49,4 +48,4 @@ module.exports = {
       {} // a map of your routes
     )
   ]
-}
+};

@@ -1,10 +1,24 @@
-describe('First Unit test', () => {
-  it('should run as expected', () => {
-    expect(true).toBe(true);
-  });
+import { TestBed, async } from '@angular/core/testing';
+import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
-  it('should return 2', () => {
+describe('AppComponent', () => {
 
-    expect(1+4).toBe(5);
-  })
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [
+        AppComponent
+      ],
+    }).compileComponents();
+  }));
+
+  it('should create the app component with the router', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app).toBeTruthy();
+  }));
+
 });

@@ -26,8 +26,8 @@ import { environment } from '../enviroments/enviroment';
 import { APP_ROUTES } from './app-routing.module';
 
 //Pipes.
-import { HeightConversionPipe} from './pipes/heightConversionPipe';
-import { idConversionPipe } from './pipes/idConversionPipe';
+import { HeightConversionPipe} from './pipes/heightConversion.pipe';
+import { IdConversionPipe } from './pipes/idConversion.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { idConversionPipe } from './pipes/idConversionPipe';
     HeroesComponent,
     HeroEditComponent,
     HeightConversionPipe,
-    idConversionPipe
+    IdConversionPipe
   ],
   imports: [
     BrowserModule,
