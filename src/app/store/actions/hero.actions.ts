@@ -8,11 +8,8 @@ export const LOAD_HEROES_FAIL = '[Heroes] Load Heroes Fail';
 
 
 export class LoadHeroes implements Action {
-
   readonly type = LOAD_HEROES;
-
 }
-
 
 export class LoadHeroesSuccess implements Action {
 
