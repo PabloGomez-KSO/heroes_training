@@ -4,12 +4,14 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  
   padding: 0;
   align-items: center; //De acuerdo al flex centra los items
   list-style: none;
   min-height: 60%;
   width: 70%;
   margin-top: 160px;
+  padding:5px;
 
   .hero-card {
     width: 350px;
@@ -21,7 +23,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
-
+    padding:5px;
     &:hover {
       background: #f2dfd7;
       @extend .zoom-background-hover;
@@ -48,7 +50,7 @@
       background-color: rgba(255, 0, 0, 0.8);
       border-radius: 50%;
       display: inline-block;
-      top: 0; /*[wherever you want it]*/
+      top: 0;
       left: -30px;
       position: relative;
       top: 15px;

@@ -3,34 +3,27 @@
     <div class="hero-edit-data">
       <div class="form-row">
         <label for="nickname"> <strong> Nickname </strong> </label>
-        <input type="text"
-          name="nickname"
-          [(ngModel)]="heroToEdit._nickname"
-          id="nickname"
-          placeholder="Enter a hero nickname">
+        <input type="text" name="nickname" [(ngModel)]="heroToEdit._nickname" id="nickname" placeholder="Enter a hero nickname">
       </div>
       <div class="form-row">
         <label for="name"> <strong> Name </strong></label>
-        <input type="text"
-          id="name"
-          name="name"
-          [(ngModel)]="heroToEdit._name"
-          placeholder="Enter a hero name">
+        <input type="text" id="name" name="name" [(ngModel)]="heroToEdit._name" placeholder="Enter a hero name">
       </div>
       <div class="form-row">
         <label for="height"> <strong> Height (ft) </strong></label>
-        <input type="text"
-          id="height"
-          name="height"
-          [(ngModel)]="heroToEdit._height"
+        <input type="text" id="height" name="height" [(ngModel)]="heroToEdit._height"
           placeholder="Enter a height in feet">
       </div>
       <div class="hero-image">
         <img [src]="heroToEdit._picture" alt="Avatar">
       </div>
       <div class="option-buttons">
-        <button (click)="goToPreviousPage()" type="submit">Previous</button>
-        <button (click)="updateHero()" type="submit">Update</button>
+        <button (click)="goToPreviousPage()" type="submit">
+          <i class="fas fa-undo"></i>
+          <label> Go Back</label></button>
+        <button (click)="updateHero()" type="submit">
+          <i class="fas fa-edit"></i>
+          <label> Update</label></button>
       </div>
     </div>
   </form>

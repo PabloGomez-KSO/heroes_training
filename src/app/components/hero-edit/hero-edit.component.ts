@@ -5,6 +5,8 @@ import { Hero } from '../../model/hero.model';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from "@angular/router";
 import * as actions from '../../store/actions';
+
+
 @Component({
   selector: 'heroe-edit',
   templateUrl: 'hero-edit.component.html',
@@ -29,6 +31,7 @@ export class HeroEditComponent implements OnInit {
           this.heroToEdit = this.heroes.find(hero => hero._id === this.idToSearch);
         });
       });
+
   }
 
   goToPreviousPage() {
