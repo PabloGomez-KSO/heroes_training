@@ -5,6 +5,7 @@ import { Hero } from '../../model/hero.model';
 export const LOAD_HEROES = '[Heroes] Load Heroes';
 export const LOAD_HEROES_SUCCESS = '[Heroes] Load Heroes Success';
 export const LOAD_HEROES_FAIL = '[Heroes] Load Heroes Fail';
+export const UPDATE_HEROES = '[Heroes] Update Heroes';
 
 
 export class LoadHeroes implements Action {
@@ -25,4 +26,9 @@ export class LoadHeroesFail implements Action {
 
 }
 
-export type heroActions = LoadHeroes | LoadHeroesSuccess | LoadHeroesFail;
+export class UpdateHeroes implements Action {
+  readonly type = UPDATE_HEROES;
+  constructor(public hero: Hero) {  }
+}
+
+export type heroActions = LoadHeroes | LoadHeroesSuccess | LoadHeroesFail | UpdateHeroes;

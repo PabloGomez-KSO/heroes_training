@@ -11,30 +11,48 @@ describe('LoadHeroes action', () => {
 
 
 describe('LoadHeroesSuccess action', () => {
-  it('should create an action', () => {
-    const payload: Hero[] = [
+  it('should create a load heroes action successfully', () => {
+    const testHeroes: Hero[] = [
       {
-        _id: 1,
         _name: "Machine War",
         _height: 6.4,
         _picture: "test.jpg",
         _nickname: "War Pro"
       },
       {
-        _id: 2,
         _name: "Hulk",
         _height: 7.0,
         _picture: "test.jpg",
         _nickname: "Monster"
       }
     ];
-    const action = new heroActions.LoadHeroesSuccess(payload);
+    const testAction = new heroActions.LoadHeroesSuccess(testHeroes);
 
-    expect({ ...action }).toEqual({
+    expect({ ...testAction }).toEqual({
       type: heroActions.LOAD_HEROES_SUCCESS,
-      heroes: payload
+      heroes: testHeroes
     });
 
   });
+});
 
+describe('UpdateHeroes action', () => {
+  it('should create a update hero action', ()=> {
+    
+    const testHero: Hero = {
+      _id: 2,
+      _name: "Captain America",
+      _height: 6.0,
+      _picture: "text.jpg",
+      _nickname: "Cap"
+    };
+
+    const testAction = new heroActions.UpdateHeroes(testHero);
+
+    expect({ ...testAction }).toEqual({
+      type: heroActions.UPDATE_HEROES,
+      hero: testHero
+    });
+    
+  });
 });

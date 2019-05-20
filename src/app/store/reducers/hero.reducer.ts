@@ -51,6 +51,27 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
         loaded: false,
         error: action.payload
       };
+
+    case actions.UPDATE_HEROES:
+
+      let heroesUpdated: Hero[] = [];
+      let index = 0;
+
+      state.heroes.forEach(hero => {
+        if (hero._id === action.hero._id) {
+          heroesUpdated[index] = action.hero;
+        }
+        else {
+          heroesUpdated[index] = hero;
+        }
+        index++;
+      });
+      
+      return {
+        ...state,
+        error: null,
+        heroes: [...heroesUpdated]
+      }
     default:
       return state;
   }

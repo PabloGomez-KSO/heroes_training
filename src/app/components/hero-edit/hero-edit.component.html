@@ -5,7 +5,8 @@
         <label for="nickname"> <strong> Nickname </strong> </label>
         <input type="text"
                name="nickname"
-               [(ngModel)]="heroToEdit._nickname"
+               [ngModel]="heroToEdit?._nickname"
+               (ngModelChange)="heroToEdit._nickname = $event" 
                id="nickname"
                placeholder="Enter a hero nickname">
       </div>
@@ -14,7 +15,8 @@
         <input type="text"
                id="name"
                name="name"
-               [(ngModel)]="heroToEdit._name"
+               [ngModel]="heroToEdit?._name"
+               (ngModelChange)="heroToEdit._name = $event" 
                placeholder="Enter a hero name">
       </div>
       <div class="form-row">
@@ -22,11 +24,12 @@
         <input type="text"
                id="height"
                name="height"
-               [(ngModel)]="heroToEdit._height"
-                placeholder="Enter a height in feet">
+               [ngModel]="heroToEdit?._height"
+               (ngModelChange)="heroToEdit._height = $event" 
+               placeholder="Enter a height in feet">
       </div>
       <div class="hero-image">
-        <img [src]="heroToEdit._picture"
+        <img [src]="heroToEdit?._picture"
               alt="Avatar">
       </div>
       <div class="option-buttons">

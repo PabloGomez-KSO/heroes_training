@@ -1,6 +1,6 @@
 export class Hero {
 
-  _id: number;
+  _id?: number;
   _name: string;
   _height:  number;
   _picture: string;

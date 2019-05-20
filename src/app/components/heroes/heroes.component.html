@@ -1,23 +1,23 @@
-<div class="heroes-container">
-    <div class="heroes-container__card" *ngFor="let heroe of heroes" (click)="modifyHero(heroe._id)">
-      <div class="heroes-container__img">
-        <img [src]="heroe._picture" alt="Avatar">
+<div class="heroes-container" >
+  <div class="heroes-container__card" *ngFor="let heroe of heroes" (click)="modifyHero(heroe._id)">
+    <div class="heroes-container__img">
+      <img [src]="heroe._picture" alt="Avatar">
+    </div>
+    <div class="heroes-container__circle">
+      <span class="dot">
+        <p> {{ heroe._id | idPipe}} </p>
+      </span>
+    </div>
+    <div class="heroes-container__content">
+      <div class="heroes-container__content__nickname">
+        <strong> {{ heroe._nickname }} </strong>
       </div>
-      <div class="heroes-container__circle">
-        <span class="dot">
-          <p> {{ heroe._id | idPipe}} </p>
-        </span>
+      <div class="heroes-container__content__name">
+        <span> {{ heroe._name}} </span>
       </div>
-      <div class="heroes-container__content">
-        <div class="heroes-container__content__nickname">
-          <strong> {{ heroe._nickname }} </strong>
-        </div>
-        <div class="heroes-container__content__name">
-          <span> {{ heroe._name}} </span>
-        </div>
-        <div class="heroes-container__content__height">
-          <span> Estatura: {{heroe._height | heightPipe }} mt </span>
-        </div>
+      <div class="heroes-container__content__height">
+        <span> Estatura: {{heroe._height | heightPipe }} mt </span>
       </div>
     </div>
   </div>
+</div>

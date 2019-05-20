@@ -46,20 +46,6 @@ export class HeroEditComponent implements OnInit {
   }
 
   updateHero() {
-
-    let heroesUpdated: Hero[] = [];
-    let index = 0;
-
-    this.heroes.forEach(hero => {
-      if (hero._id === this.idToSearch) {
-        heroesUpdated[index] = this.heroToEdit;
-      }
-      else {
-        heroesUpdated[index] = hero;
-      }
-      index++;
-    })
-
-    this.store.dispatch(new actions.LoadHeroesSuccess(heroesUpdated));
+    this.store.dispatch(new actions.UpdateHeroes(this.heroToEdit));
   }
 }
