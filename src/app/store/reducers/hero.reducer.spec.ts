@@ -3,33 +3,18 @@ import * as reducer from './hero.reducer';
 import { Hero } from '../../model/hero.model';
 
 
-const testHeroes: Hero[] = [
-    {
-        _id: 1,
-        _name: "Machine War",
-        _height: 6.4,
-        _picture: "test.jpg",
-        _nickname: "War Pro"
-    },
-    {
-        _id: 2,
-        _name: "Hulk",
-        _height: 7.0,
-        _picture: "test.jpg",
-        _nickname: "Monster"
-    }
-];
+const testHeroes: Hero[] = [];
+
+testHeroes[0] = new Hero(1, "MegaTron", 6.4, "test.jpg", "War Pro");
+testHeroes[1] = new Hero(2, "Bumbublee", 7.0, "test.jpg", "Destroy Optimus Prime");
+
+const heroUpdate: Hero = new Hero(2, "Bumbublee Rocks", 15.0, "test.jpg", "Save Optimus");
 
 
+const testHeroesUpdated: Hero[] = [];
 
-const heroUpdate: Hero =
-    {
-        _id: 2,
-        _name: "Hulk The Pro Hero",
-        _height: 7.0,
-        _picture: "test.jpg",
-        _nickname: "BIG MONSTER"
-    };
+testHeroesUpdated[0] = new Hero(1, "MegaTron", 6.4, "test.jpg", "War Pro");
+testHeroesUpdated[1] = new Hero(2, "Bumbublee Rocks", 15.0, "test.jpg", "Save Optimus");
 
 describe('[Heroes] Load Heroes Action', () => {
 
@@ -74,10 +59,13 @@ describe('[Heroes] Load Heroes Success Action', () => {
 
         const result = reducer.heroesReducer(fakeInitialState, testAction);
 
-        expect(result.error).toEqual(null);
-        expect(result.heroes.length).toBe(2);
-        expect(result.loaded).toBe(true);
-        expect(result.loading).toBe(false);
+        const expectedResult: reducer.HeroesState = {
+            heroes: testHeroes,
+            loaded: true,
+            loading: false,
+            error: null
+        }
+        expect(result).toEqual(expectedResult);
 
     });
 });
@@ -94,19 +82,19 @@ describe('[Heroes] Update Heroes Action', () => {
             loading: false,
             error: null
         };
-        
+
         const updateTestAction = new heroActions.UpdateHeroes(heroUpdate);
-        
-        const updateResult =  reducer.heroesReducer(fakeInitialState, updateTestAction); 
 
-        expect(updateResult.error).toEqual(null);
-        expect(updateResult.heroes.length).toBe(2);
-        expect(updateResult.loaded).toBe(true);
-        expect(updateResult.loading).toBe(false);
-        expect(updateResult.heroes[0]).toBe(testHeroes[0]);
+        const updateResult =  reducer.heroesReducer(fakeInitialState, updateTestAction);
 
-        //Expecting to have the hero with the information updated.
-        expect(updateResult.heroes[1]).toBe(heroUpdate);
+        const expectedResult: reducer.HeroesState = {
+            heroes: [...testHeroesUpdated],
+            loaded: true,
+            loading: false,
+            error: null
+        };
+
+        expect(updateResult).toEqual(expectedResult);
 
     });
 });

@@ -24,7 +24,7 @@ export class HeroesEffects {
         return this.heroService.getHeroes()
           .pipe(
             map(heroes => new heroActions.LoadHeroesSuccess(heroes)),
-            catchError(error =>     of(new heroActions.LoadHeroesFail(error))
+            catchError((error: Error) =>     of(new heroActions.LoadHeroesFail(error))
           ));
       })
     );

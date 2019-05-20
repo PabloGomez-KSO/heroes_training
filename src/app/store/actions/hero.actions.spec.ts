@@ -12,20 +12,11 @@ describe('LoadHeroes action', () => {
 
 describe('LoadHeroesSuccess action', () => {
   it('should create a load heroes action successfully', () => {
-    const testHeroes: Hero[] = [
-      {
-        _name: "Machine War",
-        _height: 6.4,
-        _picture: "test.jpg",
-        _nickname: "War Pro"
-      },
-      {
-        _name: "Hulk",
-        _height: 7.0,
-        _picture: "test.jpg",
-        _nickname: "Monster"
-      }
-    ];
+    const testHeroes: Hero[] = [];
+
+    testHeroes[0] = new Hero(888723, "MegaTron", 6.4, "test.jpg", "War Pro");
+    testHeroes[1] = new Hero(742, "Obsidian Destroyer", 7.0, "test.jpg", "I am the watcher");
+
     const testAction = new heroActions.LoadHeroesSuccess(testHeroes);
 
     expect({ ...testAction }).toEqual({
@@ -38,21 +29,15 @@ describe('LoadHeroesSuccess action', () => {
 
 describe('UpdateHeroes action', () => {
   it('should create a update hero action', ()=> {
-    
-    const testHero: Hero = {
-      _id: 2,
-      _name: "Captain America",
-      _height: 6.0,
-      _picture: "text.jpg",
-      _nickname: "Cap"
-    };
 
-    const testAction = new heroActions.UpdateHeroes(testHero);
+
+    const heroUpdate: Hero = new Hero(742, "Obsidian Destroyer", 7.0, "test.jpg", "I am the watcher");
+    const testAction = new heroActions.UpdateHeroes(heroUpdate);
 
     expect({ ...testAction }).toEqual({
       type: heroActions.UPDATE_HEROES,
-      hero: testHero
+      hero: heroUpdate
     });
-    
+
   });
 });

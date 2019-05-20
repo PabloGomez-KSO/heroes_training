@@ -66,7 +66,7 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
         }
         index++;
       });
-      
+
       return {
         ...state,
         error: null,

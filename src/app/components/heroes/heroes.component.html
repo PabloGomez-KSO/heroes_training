@@ -1,5 +1,11 @@
-<div class="heroes-container" >
-  <div class="heroes-container__card" *ngFor="let heroe of heroes" (click)="modifyHero(heroe._id)">
+<div class="loading-container" *ngIf="loading">
+  <i class="fa fa-spinner fa-spin" style="font-size:42px"></i>
+  <span> Loading Information </span>
+</div>
+
+<div class="heroes-container" *ngIf="!loading">
+  <div class="heroes-container__card" *ngFor="let heroe of heroes"
+      (click)="modifyHero(heroe._id)">
     <div class="heroes-container__img">
       <img [src]="heroe._picture" alt="Avatar">
     </div>

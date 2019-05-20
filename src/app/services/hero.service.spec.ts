@@ -27,11 +27,12 @@ describe('Hero Service Unit Testing', () => {
   //We are getting those heroes as expected. We are working with a testing backend.
   it('should retrieve heroes imformation VIA GET METHOD', () => {
 
-    const dummyHeroes: Hero[] = [    { _name: "Machine War", _height: 6.4, _picture: "test.jpg", _nickname: "War Pro"},
-                                     { _name: "Hulk", _height: 7.0, _picture: "test.jpg", _nickname: "Monster"}      ]
+    const dummyHeroes: Hero[] = [];
+
+    dummyHeroes[0] = new Hero(888723, "MegaTron", 6.4, "test.jpg", "War Pro");
+    dummyHeroes[1] = new Hero(742, "Obsidian Destroyer", 7.0, "test.jpg", "I am the watcher");
 
     heroService.getHeroes().subscribe(heroes => {
-      expect(heroes.length).toBe(2);
       expect(heroes).toEqual(dummyHeroes);
     }
     );

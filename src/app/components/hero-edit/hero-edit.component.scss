@@ -1,19 +1,22 @@
+
+@import '../../../assets/scss/variables';
+
 .hero-edit-container {
-  background: rgba(255, 255, 255, 0.8);
+  background: $white_opacity;
   margin: 0 auto;
   padding: 10px;
   align-items: center;
   min-height: 70%;
   width: 670px;
   margin-top: 160px;
-  
+
   .form-row {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     padding: 0.5em;
-    font-family: 'Helvetica';
+    font-family: $main_font;
     font-size: 18px;
     margin-bottom: 15px;
   }
@@ -26,7 +29,7 @@
   .form-row > input {
     margin-top: 15px;
     width: 320px;
-    font-family: 'Helvetica';
+    font-family: $main_font;
     font-size: 18px;
   }
 
@@ -53,11 +56,11 @@
   }
 
   .option-buttons > button {
-    color: white;
+    color: $white;
     border: 0;
-    font-family: 'Helvetica';
+    font-family: $main_font;
     font-size: 18px;
-    background-color: rgba(255, 0, 0, 0.8);
+    background-color: $red_opacity;
     padding: 15px;
     width: 100px;
     cursor: pointer;

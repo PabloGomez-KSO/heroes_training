@@ -5,7 +5,6 @@ import { Hero } from '../../model/hero.model';
 import { ActivatedRoute } from "@angular/router";
 import * as actions from '../../store/actions';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'heroe-edit',
   templateUrl: 'hero-edit.component.html',
@@ -38,6 +37,7 @@ export class HeroEditComponent implements OnInit {
       if (!this.loaded) {
         this.store.dispatch(new actions.LoadHeroes());
       }
+
 
   }
 

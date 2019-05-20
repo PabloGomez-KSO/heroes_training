@@ -1,5 +1,31 @@
+
+@import '../../../assets/scss/variables';
+
+.loading-container{
+  background: $white_opacity;
+  padding: 0;
+  align-items: center;
+  list-style: none;
+  min-height: 30%;
+  width: 30%;
+  margin-top: 160px;
+  padding:5px;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+
+
+  span {
+    font-family: $main_font;
+    margin-left: 20px;
+    font-size: 26px;
+  }
+
+}
+
 .heroes-container {
-  background: rgba(255, 255, 255, 0.8);
+  background: $white_opacity;
   display: inline-block;
   margin: 0 auto;
   display: flex;
@@ -25,7 +51,7 @@
     cursor: pointer;
     padding:5px;
     &:hover {
-      background: #f2dfd7;
+      background: $background_hover;
       @extend .zoom-background-hover;
     }
 
@@ -47,7 +73,7 @@
     }
 
     .dot {
-      background-color: rgba(255, 0, 0, 0.8);
+      background-color: $red_opacity;
       border-radius: 50%;
       display: inline-block;
       top: 0;
@@ -64,7 +90,7 @@
       }
 
       p {
-        font-family: 'Helvetica';
+        font-family:$main_font;
         color: white;
         font-size: 18px;
       }
@@ -73,15 +99,15 @@
       position: relative;
       right: 10px;
       left: 40px;
-      font-family: 'Helvetica';
-      color: #696969;
+      font-family: $main_font;
+      color: $card_font_color;
 
       &:hover {
         @extend .zoom-background-hover;
       }
 
       .heroes-container__content__nickname {
-        color: red;
+        color: $red;
         font-size: 22px;
       }
     }
@@ -107,19 +133,19 @@
         min-width: 45px;
         min-height: 45px;
         p {
-          color: white;
+          color: $white;
           font-size: 16px;
         }
 
       }
       .heroes-container__content {
-        color: #696969;
+        color: $card_font_color;
         font-size: 14px;
         right: 5px;
         left: 15px;
         word-wrap: break-word;
         .content_nickname {
-          color: red;
+          color: $red;
         }
       }
     }
