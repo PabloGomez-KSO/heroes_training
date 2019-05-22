@@ -24,23 +24,11 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
         error: null
       };
     case actions.LOAD_HEROES_SUCCESS:
-
-      let heroesArray: Hero[] = [];
-
-      for (let i = 0; i < action.heroes.length; i++) {
-        heroesArray[i] = new Hero(i + 1,
-          action.heroes[i]._name,
-          action.heroes[i]._height,
-          action.heroes[i]._picture,
-          action.heroes[i]._nickname
-        );
-      }
-
       return {
         ...state,
         loading: false,
         loaded: true,
-        heroes: [...heroesArray]
+        heroes: [...action.heroes]
       };
     case actions.LOAD_HEROES_FAIL:
       return {

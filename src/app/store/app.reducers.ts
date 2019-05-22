@@ -1,5 +1,4 @@
-import { Hero } from '../model/hero.model';
-import { ActionReducerMap } from '@ngrx/store';
+import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import * as reducers from './reducers';
 
 export interface AppState {

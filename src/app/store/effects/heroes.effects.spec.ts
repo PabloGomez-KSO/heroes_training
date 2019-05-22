@@ -46,8 +46,6 @@ describe('HeroesEffects', () => {
       const outcome = new heroActions.LoadHeroesSuccess(testHeroes);
 
       actions = hot('-a', { a: action });  //Waiting 10 frames. emit the action. It is used as a trigger to emit our heroes load action.
-
-
       const response = cold('-a|', { a: testHeroes });
       heroService.getHeroes.and.returnValue(response); //Waiting 10 frames, returning getHeroes service observable.
 

@@ -9,13 +9,11 @@ import { of } from 'rxjs/observable/of';
 @Injectable()
 export class HeroesEffects {
 
-
   constructor(
     private actions$: Actions,
     public heroService: HeroService
   ) {
   }
-
 
   @Effect()
   loadHeroes$ = this.actions$.ofType(heroActions.LOAD_HEROES)
@@ -28,5 +26,4 @@ export class HeroesEffects {
           ));
       })
     );
-
 }

@@ -5,6 +5,7 @@ import { Hero } from '../../model/hero.model';
 import { ActivatedRoute } from "@angular/router";
 import * as actions from '../../store/actions';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'heroe-edit',
   templateUrl: 'hero-edit.component.html',
@@ -17,9 +18,12 @@ export class HeroEditComponent implements OnInit {
   heroToEdit: Hero;
   idToSearch: number;
   loaded: boolean;
+  heroForm: FormGroup;
 
-
-  constructor(private store: Store<AppState>, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private store: Store<AppState>,
+              private activatedRoute: ActivatedRoute,
+              private router: Router
+  ) {
   }
 
   ngOnInit() {
@@ -28,6 +32,8 @@ export class HeroEditComponent implements OnInit {
         console.log(this.heroes);
         this.heroes = data.heroes;
         this.loaded = data.loaded;
+
+        this.idToSearch = Number(this.activatedRoute.snapshot.params.id);
 
         this.activatedRoute.params.subscribe(params => {
           this.idToSearch = Number(params['id']);
@@ -38,6 +44,16 @@ export class HeroEditComponent implements OnInit {
     if (!this.loaded) {
       this.store.dispatch(new actions.LoadHeroes());
     }
+
+    this.setFormsValidators();
+  }
+
+  setFormsValidators(){
+    this.heroForm = new FormGroup({
+      'nickname': new FormControl(this.heroToEdit._nickname, Validators.required),
+      'name': new FormControl(this.heroToEdit._name, Validators.required),
+      'height': new FormControl(this.heroToEdit._height, Validators.required)
+    });
   }
 
   goToPreviousPage() {

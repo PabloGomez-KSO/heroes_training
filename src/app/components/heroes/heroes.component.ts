@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/app.reducers';
 import { Hero } from '../../model/hero.model';
-
 import * as actions from '../../store/actions';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-heroes',
   templateUrl: 'heroes.component.html',
@@ -35,7 +33,6 @@ export class HeroesComponent implements OnInit {
     if (!this.loaded) {
       this.store.dispatch(new actions.LoadHeroes());
     }
-
   }
 
   modifyHero(id: number) {

@@ -1,47 +1,38 @@
 <div class="hero-edit-container">
-  <form>
+  <form [formGroup]="heroForm" (ngSubmit)="updateHero()">
     <div class="hero-edit-row">
-      <label class="hero-edit-row__data" for="nickname"> <strong> Nickname
-        </strong> </label>
+      <label class="hero-edit-row__data" for="nickname"> <strong> Nickname</strong> </label>
       <input class="hero-edit-row__input"
-        type="text"
-        name="nickname"
-        [ngModel]="heroToEdit?._nickname"
-        (ngModelChange)="heroToEdit._nickname= $event"
-        id="nickname"
-        placeholder="Enter a hero nickname">
+             type="text"
+             name="nickname"
+             formControlName="nickname"
+             placeholder="Enter a hero nickname">
     </div>
     <div class="hero-edit-row">
       <label class="hero-edit-row__data" for="name"> <strong> Name </strong></label>
       <input class="hero-edit-row__input"
-        type="text"
-        id="name"
-        name="name"
-        [ngModel]="heroToEdit?._name"
-        (ngModelChange)="heroToEdit._name= $event"
-        placeholder="Enter a hero name">
+             type="text"
+             name="name"
+             formControlName="name"
+             placeholder="Enter a hero name">
     </div>
     <div class="hero-edit-row">
       <label class="hero-edit-row__data" for="height"> <strong> Height (ft)</strong></label>
       <input class="hero-edit-row__input"
-        type="text"
-        id="height"
-        name="height"
-        [ngModel]="heroToEdit?._height"
-        (ngModelChange)="heroToEdit._height= $event"
-        placeholder="Enter a height in feet">
+             type="text"
+             name="height"
+             formControlName="height"
+             placeholder="Enter a height in feet">
     </div>
     <div class="hero-edit-row">
       <img class="hero-edit-row__image" [src]="heroToEdit?._picture" alt="Avatar">
     </div>
     <div class="hero-edit-buttons">
-      <button class="hero-edit-buttons__option" (click)="goToPreviousPage()"
-        type="submit">
+      <button class="hero-edit-buttons__option" (click)="goToPreviousPage()">
         <i class="fas fa-undo"></i>
         <label> Go Back</label>
       </button>
-      <button class="hero-edit-buttons__option" (click)="updateHero()"
-        type="submit">
+      <button class="hero-edit-buttons__option" type="submit">
         <i class="fas fa-edit"></i>
         <label> Update</label>
       </button>
