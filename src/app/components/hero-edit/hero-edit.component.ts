@@ -19,12 +19,13 @@ export class HeroEditComponent implements OnInit {
   loaded: boolean;
 
 
-  constructor( private store: Store<AppState>, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private store: Store<AppState>, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
     this.store.select('heroesState').
       subscribe(data => {
+        console.log(this.heroes);
         this.heroes = data.heroes;
         this.loaded = data.loaded;
 
@@ -34,11 +35,9 @@ export class HeroEditComponent implements OnInit {
         });
       });
 
-      if (!this.loaded) {
-        this.store.dispatch(new actions.LoadHeroes());
-      }
-
-
+    if (!this.loaded) {
+      this.store.dispatch(new actions.LoadHeroes());
+    }
   }
 
   goToPreviousPage() {

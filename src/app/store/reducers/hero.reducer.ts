@@ -1,7 +1,5 @@
 import * as actions from '../actions';
 import { Hero } from '../../model/hero.model';
-
-
 export interface HeroesState {
   heroes: Hero[];
   loaded: boolean;

@@ -1,4 +1,3 @@
-
 @import '../../../assets/scss/variables';
 
 .hero-edit-container {
@@ -10,96 +9,68 @@
   width: 670px;
   margin-top: 160px;
 
-  .form-row {
+  .hero-edit-row {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 0.5em;
     font-family: $main_font;
     font-size: 18px;
     margin-bottom: 15px;
-  }
-  .form-row > label {
-    padding: 10px 5px 5px 10px;
-    margin-top: 20px;
-    margin-right: 15px;
-    width: 150px;
-  }
-  .form-row > input {
-    margin-top: 15px;
-    width: 320px;
-    font-family: $main_font;
-    font-size: 18px;
+
+    &__data {
+      padding: 10px 5px 5px 10px;
+      margin-top: 20px;
+      margin-right: 15px;
+      width: 150px;
+    }
+
+    &__input {
+      padding: 15px;
+      margin-top: 15px;
+      width: 320px;
+      font-family: $main_font;
+      font-size: 18px;
+    }
+
+    &__image {
+      min-width: 200px;
+      min-height: 200px;
+    }
   }
 
-  .hero-image {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    margin-left: 70px;
-  }
-
-  img {
-    min-width: 200px;
-    min-height: 200px;
-  }
-
-  .form-row > input,
-  .form-row > button {
-    padding: 15px;
-  }
-
-  .option-buttons {
+  .hero-edit-buttons {
     display: flex;
     justify-content: space-around;
-  }
 
-  .option-buttons > button {
-    color: $white;
-    border: 0;
-    font-family: $main_font;
-    font-size: 18px;
-    background-color: $red_opacity;
-    padding: 15px;
-    width: 100px;
-    cursor: pointer;
+    &__option {
+      color: $white;
+      border: 0;
+      font-family: $main_font;
+      font-size: 18px;
+      background-color: $red_opacity;
+      padding: 15px;
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
 
-    &:hover {
-      @extend .button-transition-hover;
-    }
-
-  }
-
-  button > i, button > label {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-}
-
-@media all and (min-width: 500px) {
-  .hero-edit-container {
-    .form-row > label {
-      display: block;
-    }
-  }
-}
-@media all and (min-width: 600px) {
-  .hero-edit-container {
-    .form-row {
-      flex-direction: row;
-    }
-    .form-row label {
-      flex-basis: 9rem;
-      flex-grow: 0;
-      flex-shrink: 0;
+      &:hover {
+        @extend .button-transition-hover;
+      }
     }
   }
 }
 
+@media all and (max-width: 600px) {
+  .hero-edit-container
+    .hero-edit-row {
+      flex-direction: column;
+    }
+}
 
 .button-transition-hover {
   transform: scale(1.1);

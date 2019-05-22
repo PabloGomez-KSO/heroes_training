@@ -6,7 +6,6 @@ import { Hero } from '../model/hero.model';
 @Injectable()
 export class HeroService {
 
-
   public apiUrl = 'https://udem.herokuapp.com/heroes/';
 
   constructor(private http: HttpClient) {

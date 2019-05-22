@@ -1,7 +1,6 @@
-
 @import '../../../assets/scss/variables';
 
-.loading-container{
+.loading-container {
   background: $white_opacity;
   padding: 0;
   align-items: center;
@@ -9,19 +8,50 @@
   min-height: 30%;
   width: 30%;
   margin-top: 160px;
-  padding:5px;
+  padding: 5px;
   margin: 0 auto;
   margin-top: 80px;
   display: flex;
   justify-content: center;
 
-
-  span {
+  &__message {
     font-family: $main_font;
     margin-left: 20px;
     font-size: 26px;
   }
+}
 
+.error-container {
+  @extend .loading-container;
+
+  &__message {
+    font-family: $main_font;
+    margin-left: 20px;
+    font-size: 23px;
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+}
+
+
+.noheroes-container {
+  @extend .loading-container;
+
+  &__message {
+    font-family: $main_font;
+    margin-left: 20px;
+    font-size: 23px;
+  }
+
+  &__image {
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
 }
 
 .heroes-container {
@@ -37,9 +67,9 @@
   min-height: 60%;
   width: 70%;
   margin-top: 160px;
-  padding:5px;
+  padding: 5px;
 
-  .heroes-container__card {
+  .heroe-card {
     width: 350px;
     height: 190px;
     background: white;
@@ -49,13 +79,13 @@
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
-    padding:5px;
+    padding: 5px;
     &:hover {
       background: $background_hover;
       @extend .zoom-background-hover;
     }
 
-    img {
+    &__image {
       border-radius: 50%;
       width: 140px;
       height: 140px;
@@ -72,7 +102,7 @@
       }
     }
 
-    .dot {
+    &__dot {
       background-color: $red_opacity;
       border-radius: 50%;
       display: inline-block;
@@ -89,13 +119,13 @@
         @extend .zoom-background-hover;
       }
 
-      p {
-        font-family:$main_font;
+      &__content {
+        font-family: $main_font;
         color: white;
         font-size: 18px;
       }
     }
-    .heroes-container__content {
+     &__data  {
       position: relative;
       right: 10px;
       left: 40px;
@@ -106,7 +136,7 @@
         @extend .zoom-background-hover;
       }
 
-      .heroes-container__content__nickname {
+      &__nickname {
         color: $red;
         font-size: 22px;
       }
@@ -117,36 +147,32 @@
 @media screen and (max-width: 414px) {
   .heroes-container {
     min-width: 320px;
-    .heroes-container__card {
+    .heroe-card {
       width: 205px;
       height: 152px;
       min-width: 280px;
       min-height: 152px;
 
-      img {
+      &__image {
         width: 120px;
         height: 120px;
       }
-      .dot {
+      &__dot {
         width: 45px;
         height: 45px;
         min-width: 45px;
         min-height: 45px;
-        p {
+        &__content {
           color: $white;
           font-size: 16px;
         }
-
       }
-      .heroes-container__content {
+      &__data {
         color: $card_font_color;
         font-size: 14px;
         right: 5px;
         left: 15px;
         word-wrap: break-word;
-        .content_nickname {
-          color: $red;
-        }
       }
     }
   }
