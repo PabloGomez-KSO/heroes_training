@@ -14,7 +14,6 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [];
   loading: boolean;
-  loaded: boolean;
   error: any;
   heroSelected: Hero;
 
@@ -26,13 +25,10 @@ export class HeroesComponent implements OnInit {
         this.heroes = data.heroes;
         this.loading = data.loading;
         this.error = data.error;
-        this.loaded = data.loaded;
       }
       );
 
-    if (!this.loaded) {
-      this.store.dispatch(new actions.LoadHeroes());
-    }
+    this.store.dispatch(new actions.LoadHeroes());
   }
 
   modifyHero(id: number) {

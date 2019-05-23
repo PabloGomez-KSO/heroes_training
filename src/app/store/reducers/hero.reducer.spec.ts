@@ -24,7 +24,6 @@ describe('[Heroes] Load Heroes Action', () => {
 
         const fakeInitialState: reducer.HeroesState = {
             heroes: [],
-            loaded: false,
             loading: false,
             error: null
         }
@@ -33,7 +32,6 @@ describe('[Heroes] Load Heroes Action', () => {
 
         const expectedResult: reducer.HeroesState = {
             heroes: [],
-            loaded: false,
             loading: true,
             error: null
         }
@@ -52,7 +50,6 @@ describe('[Heroes] Load Heroes Success Action', () => {
 
         const fakeInitialState: reducer.HeroesState = {
             heroes: [],
-            loaded: false,
             loading: true,
             error: null
         }
@@ -61,7 +58,6 @@ describe('[Heroes] Load Heroes Success Action', () => {
 
         const expectedResult: reducer.HeroesState = {
             heroes: testHeroes,
-            loaded: true,
             loading: false,
             error: null
         }
@@ -78,7 +74,6 @@ describe('[Heroes] Update Heroes Action', () => {
 
         const fakeInitialState: reducer.HeroesState = {
             heroes: [...testHeroes],
-            loaded: true,
             loading: false,
             error: null
         };
@@ -89,7 +84,6 @@ describe('[Heroes] Update Heroes Action', () => {
 
         const expectedResult: reducer.HeroesState = {
             heroes: [...testHeroesUpdated],
-            loaded: true,
             loading: false,
             error: null
         };
