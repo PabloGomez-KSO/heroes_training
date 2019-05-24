@@ -13,7 +13,6 @@ const heroesInitialState: HeroesState = {
 }
 
 export function heroesReducer(state = heroesInitialState, action: actions.heroActions): HeroesState {
-
   switch (action.type) {
     case actions.LOAD_HEROES:
       return {
@@ -34,7 +33,6 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
         error: action.payload
       };
     case actions.UPDATE_HEROES:
-
       const stateUpdated = state.heroes.map(hero => {
         if (hero._id === action.hero._id) {
           hero = action.hero;

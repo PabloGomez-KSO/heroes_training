@@ -32,7 +32,6 @@ export class HeroesComponent implements OnInit {
 
     if (!this.heroes) this.store.dispatch(new actions.LoadHeroes());
   }
-
   /*
    User will navigate to another view to edit a hero.
   */

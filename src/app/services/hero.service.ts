@@ -10,7 +10,6 @@ export class HeroService {
 
   constructor(private http: HttpClient) {
   }
-
   /**
   * Get heroes calling URL Api
   * @param result - An observable with an array of heroes.

@@ -14,7 +14,6 @@ import { getHeroes, getHeroById } from '../../store/selectors/hero.selector';
 })
 
 export class HeroEditComponent implements OnInit {
-
   heroes: Hero[] = null;
   heroToEdit: Hero;
   idToSearch: number;
@@ -43,7 +42,6 @@ export class HeroEditComponent implements OnInit {
       if (this.heroToEdit) this.setFormValues();
     })
   }
-
   /**
   * This method initializes and put validators into the hero form.
   */
