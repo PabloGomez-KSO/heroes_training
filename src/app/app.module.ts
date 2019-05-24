@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //NgRx
 import { StoreModule } from '@ngrx/store';
@@ -18,6 +18,7 @@ import { HeroService } from './services/hero.service';
 //Components
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroEditComponent } from './components/hero-edit/hero-edit.component';
+import { AppComponent } from './app.component';
 
 //Enviroment
 import { environment } from '../enviroments/enviroment';
@@ -28,15 +29,13 @@ import { APP_ROUTES } from './app-routing.module';
 //Pipes.
 import { HeightConversionPipe} from './pipes/heightConversion.pipe';
 import { IdConversionPipe } from './pipes/idConversion.pipe';
-
-
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroEditComponent,
     HeightConversionPipe,
-    IdConversionPipe
+    IdConversionPipe,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +43,7 @@ import { IdConversionPipe } from './pipes/idConversion.pipe';
     ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

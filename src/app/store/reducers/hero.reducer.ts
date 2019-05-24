@@ -35,28 +35,18 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
       };
     case actions.UPDATE_HEROES:
 
-      let heroesUpdated: Hero[] = [];
-      let index = 0;
-
-
-      state.heroes.map(hero => {
-        
-      })
-
-      state.heroes.forEach(hero => {
+      const stateUpdated = state.heroes.map(hero => {
         if (hero._id === action.hero._id) {
-          heroesUpdated[index] = action.hero;
+          hero = action.hero;
+          return hero;
         }
-        else {
-          heroesUpdated[index] = hero;
-        }
-        index++;
-      });
+        return hero;
+      })
 
       return {
         ...state,
         error: null,
-        heroes: [...heroesUpdated]
+        heroes: [...stateUpdated]
       }
     default:
       return state;

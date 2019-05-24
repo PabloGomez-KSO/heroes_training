@@ -13,7 +13,6 @@ export const getHeroById = (heroId: number) => createSelector(
   }
 );
 
-
 export const getHeroes = () => createSelector(
   getHeroesState,
   (state: HeroesState) => {

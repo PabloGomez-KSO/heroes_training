@@ -19,6 +19,7 @@ export class HeroEditComponent implements OnInit {
   heroToEdit: Hero;
   idToSearch: number;
   heroForm: FormGroup;
+  succesfullyUpdate: boolean = false;
 
   constructor(private store: Store<AppState>,
     private activatedRoute: ActivatedRoute,
@@ -27,19 +28,18 @@ export class HeroEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (!this.heroes ) this.store.dispatch(new actions.LoadHeroes());
-    this.idToSearch = parseInt(this.activatedRoute.snapshot.params.id);
     this.setHeroFormValidator();
-  
+    this.idToSearch = parseInt(this.activatedRoute.snapshot.params.id);
     this.store.pipe(select(getHeroes())).subscribe(heroes => {
       this.heroes = heroes;
 
-      if(this.heroes){
+      if (this.heroes) {
         this.heroToEdit = heroes.find(hero => hero._id === this.idToSearch);
       }
-  
+
       if (this.heroToEdit) this.setValueValidator();
     });
+    if (!this.heroes) this.store.dispatch(new actions.LoadHeroes());
   }
 
   setHeroFormValidator() {
@@ -61,11 +61,12 @@ export class HeroEditComponent implements OnInit {
   }
 
   updateHero() {
-    console.log(this.heroForm.valid);
-    this.heroToEdit._nickname = this.heroForm.controls['nickname'].value;
-    this.heroToEdit._height = this.heroForm.controls['height'].value;
-    this.heroToEdit._name = this.heroForm.controls['name'].value;
-    console.log(this.heroToEdit);
-    this.store.dispatch(new actions.UpdateHeroes(this.heroToEdit));
+    if (this.heroForm.valid) {
+      this.heroToEdit._nickname = this.heroForm.controls['nickname'].value;
+      this.heroToEdit._height = this.heroForm.controls['height'].value;
+      this.heroToEdit._name = this.heroForm.controls['name'].value;
+      this.succesfullyUpdate = true;
+      this.store.dispatch(new actions.UpdateHeroes(this.heroToEdit));
+    }
   }
 }

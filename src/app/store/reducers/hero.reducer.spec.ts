@@ -40,8 +40,6 @@ describe('[Heroes] Load Heroes Action', () => {
     });
 });
 
-
-
 describe('[Heroes] Load Heroes Success Action', () => {
 
     it('Should retrieve the information from the API when calling Load Success Action', () => {
@@ -65,8 +63,6 @@ describe('[Heroes] Load Heroes Success Action', () => {
 
     });
 });
-
-
 
 describe('[Heroes] Update Heroes Action', () => {
 
