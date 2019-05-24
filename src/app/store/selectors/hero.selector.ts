@@ -1,4 +1,4 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { createSelector } from '@ngrx/store';
 import { AppState } from '../app.reducers';
 import { HeroesState } from '../reducers/hero.reducer';
 import { Hero } from '../../model/hero.model';
@@ -8,7 +8,10 @@ export const getHeroesState = (state: AppState) => state.heroesState;
 export const getHeroById = (heroId: number) => createSelector(
   getHeroesState,
   (state: HeroesState) => {
-    let hero = state.heroes.find((hero: Hero) => hero._id === heroId);
+     let hero = null;
+    if (state.heroes) {
+     hero = state.heroes.find((hero: Hero) => hero._id === heroId);
+    }
     return (hero) ? hero : null;
   }
 );

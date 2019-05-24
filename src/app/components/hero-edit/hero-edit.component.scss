@@ -46,16 +46,19 @@
       color: $red;
     }
 
-    &__heroUpdated{
+    &__heroUpdated {
       padding: 10px;
       width: 450px;
       font-family: $main_font;
       font-size: 16px;
       background: $card_font_color;
       color: $white;
+      -webkit-animation: seconds 0.5s forwards;;
+      -webkit-animation-delay: 1s;
+      animation: seconds 0.5s forwards;
+      animation-delay: 0.5s;
     }
   }
-
   .hero-edit-buttons {
     display: flex;
     justify-content: space-around;
@@ -95,4 +98,14 @@
 .button-transition-hover {
   transform: scale(1.1);
   transition-duration: 0.2s;
+}
+
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -9999px;
+  }
 }

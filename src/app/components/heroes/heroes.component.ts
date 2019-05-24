@@ -18,7 +18,9 @@ export class HeroesComponent implements OnInit {
   heroSelected: Hero;
 
   constructor(private store: Store<AppState>, private router: Router) { }
-
+  /**
+  * This method get the data from store and dispatch the action if it is necessary.
+  */
   ngOnInit() {
     this.store.select('heroesState').
       subscribe(data => {
@@ -31,6 +33,9 @@ export class HeroesComponent implements OnInit {
     if (!this.heroes) this.store.dispatch(new actions.LoadHeroes());
   }
 
+  /*
+   User will navigate to another view to edit a hero.
+  */
   modifyHero(id: number) {
     this.router.navigate(['/heroEdit', id]);
   }
