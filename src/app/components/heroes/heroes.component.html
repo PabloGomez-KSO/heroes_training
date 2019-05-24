@@ -1,38 +1,35 @@
 <div class="loading-container" *ngIf="loading">
-  <i class="fa fa-spinner fa-spin" style="font-size:42px"></i>
-  <div class="loading-container__message"> Loading Information </div>
+    <i class="fa fa-spinner fa-spin" style="font-size:42px"></i>
+    <div class="loading-container__message"> Loading Information </div>
 </div>
-
 <div class="error-container" *ngIf="error">
-  <img class="error-container__image" src="../../../assets/images/error_message.png" alt="Avatar">
-  <span class="error-container__message"> Sorry, an error ocurred with the server. </span>
+    <img class="error-container__image" src="../../../assets/images/error_message.png" alt="Avatar">
+    <span class="error-container__message"> Sorry, an error ocurred with the server. </span>
 </div>
-
-
-<div class="noheroes-container" *ngIf="!loading && !heroes">
-  <img class="noheroes-container__image" src="../../../assets/images/information_message.png" alt="Avatar">
-  <span class="noheroes-container__message"> Sorry, there are not heroes </span>
+<div *ngIf="heroes">
+    <div class="noheroes-container" *ngIf="!loading && heroes.length === 0">
+        <img class="noheroes-container__image" src="../../../assets/images/information_message.png" alt="Avatar">
+        <span class="noheroes-container__message"> Sorry, there are not heroes </span>
+    </div>
 </div>
-
 <div class="heroes-container" *ngIf="!loading && !error && heroes">
-  <div class="heroe-card" *ngFor="let heroe of heroes"
-    (click)="modifyHero(heroe._id)">
-    <img class="heroe-card__image" [src]="heroe._picture" alt="Avatar">
-    <div class="heroe-card__circle">
-      <span class="heroe-card__dot">
-        <p class="heroe-card__dot__content"> {{ heroe._id | idPipe}} </p>
-      </span>
+    <div class="heroe-card" *ngFor="let heroe of heroes" (click)="modifyHero(heroe._id)">
+        <img class="heroe-card__image" [src]="heroe._picture" alt="Avatar">
+        <div class="heroe-card__circle">
+           <span class="heroe-card__dot">
+               <p class="heroe-card__dot__content"> {{ heroe._id | idPipe}} </p>
+          </span>
+        </div>
+        <div class="heroe-card__data">
+            <div class="heroe-card__data__nickname">
+                <strong> {{ heroe._nickname }} </strong>
+            </div>
+            <div class="heroe-card__data__name">
+                {{ heroe._name}}
+            </div>
+            <div class="heroe-card__data__height">
+                Estatura: {{heroe._height | heightPipe }} mt
+            </div>
+        </div>
     </div>
-    <div class="heroe-card__data">
-      <div class="heroe-card__data__nickname">
-        <strong> {{ heroe._nickname }} </strong>
-      </div>
-      <div class="heroe-card__data__name">
-        {{ heroe._name}}
-      </div>
-      <div class="heroe-card__data__height">
-        Estatura: {{heroe._height | heightPipe }} mt
-      </div>
-    </div>
-  </div>
 </div>

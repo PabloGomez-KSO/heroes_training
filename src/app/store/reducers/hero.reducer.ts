@@ -7,7 +7,7 @@ export interface HeroesState {
 }
 
 const heroesInitialState: HeroesState = {
-  heroes: [],
+  heroes: null,
   loading: false,
   error: null
 }
@@ -33,11 +33,15 @@ export function heroesReducer(state = heroesInitialState, action: actions.heroAc
         loading: false,
         error: action.payload
       };
-
     case actions.UPDATE_HEROES:
 
       let heroesUpdated: Hero[] = [];
       let index = 0;
+
+
+      state.heroes.map(hero => {
+        
+      })
 
       state.heroes.forEach(hero => {
         if (hero._id === action.hero._id) {

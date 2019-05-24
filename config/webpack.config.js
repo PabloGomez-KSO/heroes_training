@@ -5,7 +5,7 @@ const { ContextReplacementPlugin } = require('webpack');
 module.exports = {
     entry: {
         main: './src/main.ts',
-        styles: ['./src/styles.scss',"./node_modules/ngx-toastr/toastr.scss"]
+        styles: './src/styles.scss'
     },
 
     output: {

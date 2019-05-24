@@ -37,6 +37,17 @@
       min-width: 200px;
       min-height: 200px;
     }
+
+    &__error {
+      padding: 15px;
+      width: 320px;
+      font-family: $main_font;
+      font-size: 18px;
+      background: $red_opacity;
+      color: $white;
+      margin-left: 90px;
+      
+    }
   }
 
   .hero-edit-buttons {

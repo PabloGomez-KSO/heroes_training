@@ -28,7 +28,7 @@ export class HeroesComponent implements OnInit {
       }
       );
 
-    this.store.dispatch(new actions.LoadHeroes());
+    if (!this.heroes) this.store.dispatch(new actions.LoadHeroes());
   }
 
   modifyHero(id: number) {

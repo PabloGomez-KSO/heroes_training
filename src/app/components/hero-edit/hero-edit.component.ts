@@ -6,7 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import * as actions from '../../store/actions';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { getHeroes} from '../../store/selectors/hero.selector';
+import { getHeroes } from '../../store/selectors/hero.selector';
 @Component({
   selector: 'heroe-edit',
   templateUrl: 'hero-edit.component.html',
@@ -15,10 +15,9 @@ import { getHeroes} from '../../store/selectors/hero.selector';
 
 export class HeroEditComponent implements OnInit {
 
-  heroes: Hero[] = [];
+  heroes: Hero[] = null;
   heroToEdit: Hero;
   idToSearch: number;
-  loaded: boolean;
   heroForm: FormGroup;
 
   constructor(private store: Store<AppState>,
@@ -28,19 +27,18 @@ export class HeroEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.store.dispatch(new actions.LoadHeroes());
+    if (!this.heroes ) this.store.dispatch(new actions.LoadHeroes());
     this.idToSearch = parseInt(this.activatedRoute.snapshot.params.id);
     this.setHeroFormValidator();
-
+  
     this.store.pipe(select(getHeroes())).subscribe(heroes => {
-       this.heroes = heroes;
-       this.heroToEdit = heroes.find(hero => hero._id === this.idToSearch);
+      this.heroes = heroes;
 
-       if(this.heroToEdit){
-         this.heroForm.controls['nickname'].setValue(this.heroToEdit._nickname);
-         this.heroForm.controls['name'].setValue(this.heroToEdit._name);
-         this.heroForm.controls['height'].setValue(this.heroToEdit._height);
-       }
+      if(this.heroes){
+        this.heroToEdit = heroes.find(hero => hero._id === this.idToSearch);
+      }
+  
+      if (this.heroToEdit) this.setValueValidator();
     });
   }
 
@@ -52,13 +50,22 @@ export class HeroEditComponent implements OnInit {
     });
   }
 
-
+  setValueValidator() {
+    this.heroForm.controls['nickname'].setValue(this.heroToEdit._nickname);
+    this.heroForm.controls['name'].setValue(this.heroToEdit._name);
+    this.heroForm.controls['height'].setValue(this.heroToEdit._height);
+  }
 
   goToPreviousPage() {
     this.router.navigate(['/heroes']);
   }
 
   updateHero() {
+    console.log(this.heroForm.valid);
+    this.heroToEdit._nickname = this.heroForm.controls['nickname'].value;
+    this.heroToEdit._height = this.heroForm.controls['height'].value;
+    this.heroToEdit._name = this.heroForm.controls['name'].value;
+    console.log(this.heroToEdit);
     this.store.dispatch(new actions.UpdateHeroes(this.heroToEdit));
   }
 }

@@ -1,41 +1,34 @@
 <div class="hero-edit-container">
   <form [formGroup]="heroForm" (ngSubmit)="updateHero()">
-    <div class="hero-edit-row">
-      <label class="hero-edit-row__data" for="nickname"> <strong> Nickname</strong> </label>
-      <input class="hero-edit-row__input"
-             type="text"
-             name="nickname"
-             formControlName="nickname"
-             placeholder="Enter a hero nickname">
-    </div>
-    <div class="hero-edit-row">
-      <label class="hero-edit-row__data" for="name"> <strong> Name </strong></label>
-      <input class="hero-edit-row__input"
-             type="text"
-             name="name"
-             formControlName="name"
-             placeholder="Enter a hero name">
-    </div>
-    <div class="hero-edit-row">
-      <label class="hero-edit-row__data" for="height"> <strong> Height (ft)</strong></label>
-      <input class="hero-edit-row__input"
-             type="text"
-             name="height"
-             formControlName="height"
-             placeholder="Enter a height in feet">
-    </div>
-    <div class="hero-edit-row">
-      <img class="hero-edit-row__image" [src]="heroToEdit?._picture" alt="Avatar">
-    </div>
-    <div class="hero-edit-buttons">
-      <button class="hero-edit-buttons__option" (click)="goToPreviousPage()">
-        <i class="fas fa-undo"></i>
-        <label> Go Back</label>
-      </button>
-      <button class="hero-edit-buttons__option" type="submit">
-        <i class="fas fa-edit"></i>
-        <label> Update</label>
-      </button>
-    </div>
+      <div class="hero-edit-row">
+          <label class="hero-edit-row__data" for="nickname"> <strong> Nickname</strong> </label>
+          <input class="hero-edit-row__input" type="text" name="nickname" formControlName="nickname" placeholder="Enter a hero nickname">
+      </div>
+      <div class="hero-edit-row" *ngIf="heroForm.get('nickname').errors">
+        <div class="hero-edit-row__error" *ngIf="heroForm.get('nickname').errors['required']">
+          Este dato es necesario
+        </div>
+      </div>
+      <div class="hero-edit-row">
+          <label class="hero-edit-row__data" for="name"> <strong> Name </strong></label>
+          <input class="hero-edit-row__input" type="text" name="name" formControlName="name" placeholder="Enter a hero name">
+      </div>
+      <div class="hero-edit-row">
+          <label class="hero-edit-row__data" for="height"> <strong> Height (ft)</strong></label>
+          <input class="hero-edit-row__input" type="text" name="height" formControlName="height" placeholder="Enter a height in feet">
+      </div>
+      <div class="hero-edit-row">
+          <img class="hero-edit-row__image" [src]="heroToEdit?._picture" alt="Avatar">
+      </div>
+      <div class="hero-edit-buttons">
+          <button type="button" class="hero-edit-buttons__option" (click)="goToPreviousPage()" >
+              <i class="fas fa-undo"></i>
+              <label> Go Back</label>
+          </button>
+          <button type="submit" class="hero-edit-buttons__option" >
+              <i class="fas fa-edit"></i>
+              <label> Update</label>
+          </button>
+      </div>
   </form>
 </div>
